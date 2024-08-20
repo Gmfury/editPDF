@@ -1,0 +1,13 @@
+<template>
+    <template if:true={isStaticURLPresent}>
+        <lightning-card title="View PDF">
+            <iframe id="pdfFrame" src={StaticURL} class="pdfFrame"></iframe>
+            <lightning-button label="Save PDF to Salesforce" onclick={handleSavePdf}></lightning-button>
+        </lightning-card>
+    </template>
+    <template if:false={isStaticURLPresent}>
+        <lightning-card title="Error">
+            <p>No PDF URL available for this case type.</p>
+        </lightning-card>
+    </template>
+</template>
